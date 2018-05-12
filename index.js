@@ -10,6 +10,7 @@
 //     console.log("x=" + x);
 //     x++;
 // }
+
 function reverseString(str) {
     str = str.split('');
     console.log(str);
