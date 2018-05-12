@@ -15,7 +15,6 @@ function reverseString(str) {
     str = str.split('');
     console.log(str);
     console.log(typeof str);
-
     for (x = 0; x < str.length; x++) {
         console.log("str[" + x + "]=" + str[x]);
     }
