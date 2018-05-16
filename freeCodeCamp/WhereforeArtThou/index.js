@@ -4,10 +4,16 @@ function whatIsInAName(collection, source) {
 
     console.log(collection[0].hasOwnProperty('first'));
     console.log(Object.keys(collection[0])[0]);
+    console.log(Object.keys(collection[0])[1]);
+    console.log(Object.keys(source)[0]);
     
+    if ('first' in collection[0]) {
+        console.log(collection[0]['first']);
+    }
+
     for(var x=0;x < collection.length;x++) {
-        if (collection[x].Property == source.last) {
-            console.log(collection[x].last);
+        if (Object.keys(collection[x])[1] == Object.keys(source)[0]) {
+            console.log(collection[x][1]);
         }
     }
      
