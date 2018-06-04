@@ -48,8 +48,8 @@ function updateRecords(id, prop, value) {
    return collection;
 }
 // Alter values below to test your code
-console.log(collection);
-console.log("-----------------------------------------------------");
+//console.log(collection);
+//console.log("-----------------------------------------------------");
 
 //collection = updateRecords(5439, "artist", "ABBA");
 //collection = updateRecords(5439, "tracks", "Take a Chance on Me");
@@ -58,4 +58,7 @@ console.log("-----------------------------------------------------");
 // collection = updateRecords(2468, "tracks", "Free");
 collection = updateRecords(2548, "tracks", "");
 
+console.log(collectionCopy);
+console.log("-----------------------------------------------------");
 console.log(collection);
+
