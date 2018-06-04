@@ -30,22 +30,32 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 // Only change code below this line
 function updateRecords(id, prop, value) {
 
-  if (prop != "tracks") {
-    collection[id][prop] = value;
-  }
-  return collection;
+   if (!value) {
+       console.log("value is not populated")
+       delete collection[id][prop];
+       return collection;
+   }
+   if (prop != "tracks") {
+      collection[id][prop] = value;
+   } else {
+        if (prop == "tracks") {
+            if (!collection[id][prop]) {
+                collection[id][prop] = [];
+            }
+            collection[id][prop].push(value);
+        }
+   }
+   return collection;
 }
 // Alter values below to test your code
-//debugger;
-collection = updateRecords(5439, "artist", "ABBA");
-Console.log(collection);
+console.log(collection);
+console.log("-----------------------------------------------------");
 
-//Console.log(collection["5439"].artist);
-// collection = updateRecords(5439, "tracks", "Take a Chance on Me");
-//Console.log(collection["5439"].tracks);
-// updateRecords(1245, "tracks", "Addicted to Love");
-//Console.log(collection["1245"].tracks);
-// updateRecords(2468, "tracks", "Free");
-//Console.log(collection["2468"].tracks);
-// updateRecords(2548, "tracks", "")
-//Console.log(collection["2468"].tracks);
+//collection = updateRecords(5439, "artist", "ABBA");
+//collection = updateRecords(5439, "tracks", "Take a Chance on Me");
+//  collection = updateRecords(1245, "tracks", "Addicted to Love");
+//  collection = updateRecords(1245, "tracks", "another");
+// collection = updateRecords(2468, "tracks", "Free");
+collection = updateRecords(2548, "tracks", "");
+
+console.log(collection);
