@@ -4,8 +4,8 @@ const squareList = (arr) => {
 
   let newArr = [];
 
-  newArr = arr.filter(arrElement => Number.isInteger(arrElement)); 
-  newArr = newArr.map(x => Math.pow(x,2));
+  newArr = arr.filter(arrElement => Number.isInteger(arrElement)); //pull out integers from array.
+  newArr = newArr.map(x => Math.pow(x,2)); //Square root all elements in array.
 
   return newArr;
 };
