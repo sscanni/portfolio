@@ -3,9 +3,6 @@ function Dog() {
     this.color = "white";
     this.numLegs = 4;
   }
-
-
-
 /*
 Object Oriented Programming: Define a Constructor Function
 Constructors are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
