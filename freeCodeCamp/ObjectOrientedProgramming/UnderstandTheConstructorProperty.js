@@ -1,11 +1,16 @@
 function Dog(name) {
     this.name = name;
   }
-  
-  // Add your code below this line
+    // Add your code below this line
   function joinDogFraternity(candidate) {
-    
-  }
+    if (candidate.constructor === Dog) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+  let puppy = new Dog("Tucker");
+  console.log(joinDogFraternity(puppy));
  /*
 There is a special constructor property located on the object instances duck and beagle that were created in the previous challenges:
 
