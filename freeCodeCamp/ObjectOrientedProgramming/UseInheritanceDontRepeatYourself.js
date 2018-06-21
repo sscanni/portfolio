@@ -3,10 +3,7 @@ function Cat(name) {
   }
   
   Cat.prototype = {
-    constructor: Cat, 
-    eat: function() {
-      console.log("nom nom nom");
-    }
+    constructor: Cat 
   };
   
   function Bear(name) {
@@ -14,22 +11,23 @@ function Cat(name) {
   }
   
   Bear.prototype = {
-    constructor: Bear, 
-    eat: function() {
-      console.log("nom nom nom");
-    }
+    constructor: Bear 
   };
   
   function Animal() { }
   
   Animal.prototype = {
     constructor: Animal,
-    
+    eat: function() {
+      console.log("nom nom nom");
+    }
   };
 
-  /*
+/*
 Object Oriented Programming: Use Inheritance So You Don't Repeat Yourself
-There's a principle in programming called Don't Repeat Yourself (DRY). The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
+There's a principle in programming called Don't Repeat Yourself (DRY). 
+The reason repeated code is a problem is because any change requires fixing code in multiple places. 
+This usually means more work for programmers and more room for errors.
 
 Notice in the example below that the describe method is shared by Bird and Dog:
 
@@ -73,4 +71,4 @@ Animal.prototype should have the eat property.
 Bear.prototype should not have the eat property.
 Cat.prototype should not have the eat property.
 
-  */
+*/
