@@ -2,23 +2,43 @@ function whatIsInAName(collection, source) {
     // What's in a name?
     var arr = [];
 
-    console.log(collection[0].hasOwnProperty('first'));
-    console.log(Object.keys(collection[0])[0]);
-    console.log(Object.keys(collection[0])[1]);
-    console.log(Object.keys(source)[0]);
-    
-    if ('first' in collection[0]) {
-        console.log(collection[0]['first']);
-    }
+   // console.log(collection[0].hasOwnProperty('first'));
+   // console.log(Object.keys(collection[0])[0]);
+   // console.log(Object.keys(collection[0])[1]);
+   // console.log(Object.keys(source)[0]);
 
-    for(var x=0;x < collection.length;x++) {
-        if (Object.keys(collection[x])[1] == Object.keys(source)[0]) {
-            console.log(collection[x][1]);
-        }
-    }
+   arr = Object.getOwnPropertyNames(source);
+   console.log("arr=" + arr);
+
+   arr.forEach(function(element) {
+     console.log(element);
+   });
+   console.log("-----------------------------");
+   collection.forEach(function(element) {
+     arr2 = Object.getOwnPropertyNames(element);
+     console.log("arr2=" + arr2);
+     for (let x=0;x<arr.length;x++) {
+      console.log(arr2[x] +  "=" + element[arr2[x]]);
+     }
+   });
+
+
+    // for(key in source) {
+    //   console.log(source[key]);
+    // }
+    
+    // if ('first' in collection[0]) {
+    //     console.log(collection[0]['first']);
+    // }
+
+    // for(var x=0;x < collection.length;x++) {
+    //     if (Object.keys(collection[x])[1] == Object.keys(source)[0]) {
+    //         console.log(collection[x][1]);
+    //     }
+    // }
      
     // Only change code above this line
     return arr;
   }
   
-  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet", first: "Steve" });

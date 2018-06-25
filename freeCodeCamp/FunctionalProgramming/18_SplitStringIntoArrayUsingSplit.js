@@ -1,6 +1,6 @@
 function splitify(str) {
     // Add your code below this line
-    let arr = str.split(/\W+/g);
+    let arr = str.split(/\W+/g);    //Pull all of the words out and make each one an element of an array.
     return arr;
     // Add your code above this line
   }
