@@ -2,23 +2,33 @@ function whatIsInAName(collection, source) {
     // What's in a name?
     var arr = [];
     // Only change code below this line
-    console.log(Object.keys(source)[0]);
-    console.log(Object.keys(source)[1]);
- for (let x=0;x < Object.keys(source).length; x++) {
-    console.log(Object.keys(source)[x]);
- }
-
-
-    collection.forEach((element) => {
-        console.log("element.apple=" + element.apple);
-      });
-    
+    var arr2 = [];
+    let newArray = [];
+    let matches = 0;
+    arr2 = Object.getOwnPropertyNames(source);
+    // arr2.forEach(function(element) {
+    //  console.log(element + "=" + source[element]);
+    // });
+    collection.forEach(function(element) {
+      arr = Object.getOwnPropertyNames(element);
+      matches = 0;
+      for (let x=0;x<arr.length;x++) {
+          for (let y=0;y < arr2.length;y++) {
+            if (arr[x] == arr2[y] && element[arr[x]] == source[arr2[y]]) {
+              matches++;
+            }
+          }
+      }
+      if (matches == arr2.length) {
+        newArray.push(element);
+      }
+    });
     // Only change code above this line
-    return arr;
+    return newArray;
   }
   
   //whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
-  whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }) 
+console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
 
   /*
 Intermediate Algorithm Scripting: Wherefore art thou
