@@ -9,7 +9,7 @@ function convertHTML(str) {
     return str;
   }
   
-  console.log(convertHTML("Dolce & Gabbana's"));
+  console.log(convertHTML("Dolce & Gabbana"));
 /*
 
 Intermediate Algorithm Scripting: Convert HTML Entities
