@@ -1,12 +1,31 @@
 function dropElements(arr, func) {
-    // Drop them elements.
-    return arr;
+    let newArr = [];
+    let found = false;
+    for (let x=0;x<arr.length;x++) {
+      if (found) {
+          newArr.push(arr[x]);
+      } else {
+        if (func(arr[x])) {
+            newArr.push(arr[x]);
+            found = true;  
+        }          
+      }
+    }
+    return newArr;
   }
   
-  dropElements([1, 2, 3], function(n) {return n < 3; });
+//  console.log(dropElements([1, 2, 3, 4], function(n) {return n < 3; }));
+
+console.log(dropElements([1, 2, 3, 4, 1], function(n) {return n >= 3;}));  //should return [3, 4].
+//dropElements([0, 1, 0, 1], function(n) {return n === 1;}) //should return [1, 0, 1].
+//dropElements([1, 2, 3], function(n) {return n > 0;})      //should return [1, 2, 3].
+//dropElements([1, 2, 3, 4], function(n) {return n > 5;})   //should return [].
+//dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})  //should return [7, 4].
+//dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})  //should return [3, 9, 2].
 
 /*
 Intermediate Algorithm Scripting: Drop it
+
 Given the array arr, iterate through and remove each element starting from the first element (the 0 index) 
 until the function func returns true when the iterated element is passed through it.
 
