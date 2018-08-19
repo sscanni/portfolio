@@ -11,6 +11,9 @@
 //     x++;
 // }
 function reverseString(str) {
+    str = str.split('').reverse().join('');
+    return str;
+
     str = str.split('');
     console.log(str);
     console.log(typeof str);
@@ -21,9 +24,12 @@ function reverseString(str) {
     console.log(str);
     console.log(typeof str);
     str = str.join('');
+    //str = str.reverse().join('');
+    
     console.log(str);
     console.log(typeof str);
     return str;
   }
-    console.log(reverseString("hello"));
-    console.log(reverseString("hello"));
+
+console.log(reverseString("hello"));
+    
