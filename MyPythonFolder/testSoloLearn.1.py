@@ -8,6 +8,6 @@ print(squares[2:6])
 print(squares[3:8])
 print(squares[0:1])
 
-
+print (a)
 nums = (55, 44, 33, 22)
 print(max(min(nums[:2]), abs(-42)))
